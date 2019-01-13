@@ -9,6 +9,12 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import Slideshow from './auth/components/SlideShow'
+import AddPets from './auth/components/AddPets'
+import AddImage from './auth/components/AddImage'
+import AddCare from './auth/components/AddCare'
+import Account from './auth/components/Account'
+
+
 
 class App extends Component {
   constructor () {
@@ -55,10 +61,27 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword flash={this.flash} user={user} />
           )} />
+          <AuthenticatedRoute user={user} path='/gallery' render={() => (
+            <Slideshow flash={this.flash} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/add-pets' render={() => (
+            <AddPets flash={this.flash} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/add-image' render={() => (
+            <AddImage flash={this.flash} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/add-care' render={() => (
+            <AddCare flash={this.flash} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/account' render={() => (
+            <Account flash={this.flash} user={user} />
+          )} />
         </main>
-        <div>
-          { Slideshow }
-        </div>
+
+        {/*  <div>
+        < Slideshow />
+      </div> */}
+
       </React.Fragment>
     )
   }

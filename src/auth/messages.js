@@ -8,5 +8,11 @@ export default {
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
   changePasswordFailure: 'Failed to change passwords. Check your old password' +
-                         ' and try again.'
+                         ' and try again.',
+  addPetSuccess: 'Your pet has been succesfully added!',
+  addPetFailure: 'Ruff luck. Something went wrong.',
+  addImageSuccess: 'What a purrfect picture!',
+  addImageFailure: 'Ruff luck. We couldn\'t upload your image',
+  addCareSuccess: 'Success!',
+  addCareFailure: 'Ruff luck.'
 }
