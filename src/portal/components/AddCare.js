@@ -24,13 +24,11 @@ class AddCare extends Component {
     event.preventDefault()
 
     const { type, details, pet } = this.state
-    // const { flash, history, setUser } = this.props
+    const { flash, history, user } = this.props
 
-    addCare(this.state)
-      .then(handleErrors)
-      .then(() => addCare(this.state))
-      .then(handleErrors)
-      .then(res => res.json())
+    addCare(this.state, user)
+      // .then(() => addCare(this.state))
+      // .then(res => res.json())
       // .then(res => setUser(res.user))
       .then(() => flash(messages.addCareSuccess, 'flash-success'))
       .then(() => history.push('/'))
@@ -38,13 +36,13 @@ class AddCare extends Component {
   }
 
   render () {
-    const { type, details, pet} = this.state
+    const { type, details, pet } = this.state
 
     return (
-      <form className='auth-form' onSubmit={this.addPet}>
+      <form className='auth-form' onSubmit={this.addCare}>
         <h3>Add Care</h3>
 
-        <label htmlFor="type">Type of Care</label>
+        <label htmlFor="type">Type Care</label>
         <input
           required
           name="type"

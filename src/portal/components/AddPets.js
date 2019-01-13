@@ -30,8 +30,8 @@ class AddPets extends Component {
     const { flash, history, user } = this.props
 
     addPet(this.state, user)
-      .then(() => addPet(this.state))
-      .then(res => res.json())
+      // .then(() => addPet(this.state))
+      // .then(res => res.json())
       .then(() => flash(messages.addPetSuccess, 'flash-success'))
       .then(() => history.push('/'))
       .catch(() => flash(messages.addPetFailure, 'flash-error'))

@@ -8,37 +8,37 @@ export const handleErrors = res => {
   }
 }
 
-// export const addPicture = (picture, user) => {
-//   return fetch(apiUrl + '/pictures', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Authorization':`Token token=${user.token}`
-//     },
-//     body: JSON.stringify({
-//       picture: {
-//         url: picture.url,
-//         description: picture.description,
-//         date: picture.data,
-//         owner: user
-//       }
-//     })
-//   })
-// }
-
-export const addPicture = function (form, user) {
-  const data = form
+export const addImage = (picture, user) => {
   return fetch(apiUrl + '/pictures', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'Authorization':`Token token=${user.token}`
     },
-    data,
-    contentType: false,
-    processData: false
+    body: JSON.stringify({
+      picture: {
+        url: picture.url,
+        description: picture.description,
+        date: picture.data,
+        pet: user
+      }
+    })
   })
 }
+
+// export const addImage = function (form, user) {
+//   const data = form
+//   return fetch(apiUrl + '/pictures', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Authorization':`Token token=${user.token}`
+//     },
+//     data,
+//     contentType: false,
+//     processData: false
+//   })
+// }
 
 export const updatePicture = picture => {
   return fetch(apiUrl + `/pictures/${id}`, {

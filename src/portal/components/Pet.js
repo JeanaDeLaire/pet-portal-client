@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Pet = props => {
+  console.log(res.data.pets)
   return (
     <div className="Pet">
       <h1>Name</h1>

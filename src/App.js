@@ -82,10 +82,6 @@ class App extends Component {
           )} />
         </main>
 
-        {/*  <div>
-        < Slideshow />
-      </div> */}
-
       </React.Fragment>
     )
   }

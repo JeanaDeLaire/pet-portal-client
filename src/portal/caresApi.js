@@ -16,11 +16,10 @@ export const addCare = (care, user) => {
       'Authorization':`Token token=${user.token}`
     },
     body: JSON.stringify({
-      pet: {
-        name: pet.name,
-        nickname: pet.nickname,
-        age: pet.age,
-        owner: user
+      care: {
+        type: care.type,
+        details: care.details,
+        pet: user
       }
     })
   })

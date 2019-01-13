@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
-import { addPicture } from '../galleryApi'
+import { addImage } from '../galleryApi'
 import messages from '../messages'
 import apiUrl from '../../apiConfig'
 
@@ -25,13 +25,13 @@ class AddImage extends Component {
     event.preventDefault()
 
     const { url, description, date } = this.state
-    // const { flash, history, setUser } = this.props
+    const { flash, history, user } = this.props
 
-    addImage(this.state)
-      .then(handleErrors)
-      .then(() => addPet(this.state))
-      .then(handleErrors)
-      .then(res => res.json())
+    addImage(this.state, user)
+      // .then(handleErrors)
+      // .then(() => addImage(this.state))
+      // .then(handleErrors)
+      // .then(res => res.json())
       // .then(res => setUser(res.user))
       .then(() => flash(messages.addImageSuccess, 'flash-success'))
       .then(() => history.push('/'))
@@ -42,7 +42,7 @@ class AddImage extends Component {
     const { url, description, date} = this.state
 
     return (
-      <form className='auth-form' onSubmit={this.addPet}>
+      <form className='auth-form' encType="multipart/form-data" onSubmit={this.addImage}>
         <h3>Add Image</h3>
 
         <label htmlFor="url">Image Upload</label>
