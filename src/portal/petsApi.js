@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const apiUrl = 'http://localhost:4741'
 
 export const handleErrors = res => {
@@ -6,6 +8,18 @@ export const handleErrors = res => {
   } else  {
     throw new Error('Recieved status in 400 or 500 range.')
   }
+}
+
+// export const getPets = () => axios.get(apiUrl + '/pets')
+
+
+export const getPets = (user) => {
+  return axios.get(apiUrl + '/pets', {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization':`Token token=${user.token}`
+    }
+  })
 }
 
 export const addPet = (pet, user) => {

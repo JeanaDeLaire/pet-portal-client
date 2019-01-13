@@ -10,6 +10,7 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import Slideshow from './portal/components/SlideShow'
 import Pet from './portal/components/Pet'
+import PetIndex from './portal/views/PetIndex'
 import AddPets from './portal/components/AddPets'
 import AddImage from './portal/components/AddImage'
 import AddCare from './portal/components/AddCare'
@@ -65,8 +66,8 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/gallery' render={() => (
             <Slideshow flash={this.flash} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/pet' render={() => (
-            <Pet flash={this.flash} user={user} />
+          <AuthenticatedRoute user={user} path='/pets' render={() => (
+            <PetIndex flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/add-pets' render={() => (
             <AddPets flash={this.flash} user={user} />

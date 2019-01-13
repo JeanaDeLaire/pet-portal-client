@@ -1,19 +1,16 @@
 import React from 'react'
 
 const Pet = props => {
-  console.log(res.data.pets)
   return (
-    <div className="Pet">
-      <h1>Name</h1>
+    <div className="Pet" data-id={ props.data._id }>
+      <h1>{ props.data.name }</h1>
       <div className="details">
-        <p><b>Nickname</b>:Nickname</p>
-        <p><b>Age</b>:Age</p>
+        <p><b>ID</b>: { props.data._id }</p>
+        <p><b>Director</b>: { props.data.nickname }</p>
+        <p><b>Year</b>: { props.data.age }</p>
+        <button type="submit" value="Remove">
+        </button>
       </div>
-      <h3>Care</h3>
-      <ul>
-        <li>Type: Description</li>
-      </ul>
-
     </div>
   )
 }
