@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
+import { addCare } from '../caresApi'
 import messages from '../messages'
 import apiUrl from '../../apiConfig'
 

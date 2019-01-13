@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
+import { addPicture } from '../galleryApi'
 import messages from '../messages'
 import apiUrl from '../../apiConfig'
 
@@ -62,7 +63,7 @@ class AddImage extends Component {
           placeholder="Description"
           onChange={this.handleChange}
         />
-        <label htmlFor="date">What was your photo taken?</label>
+        <label htmlFor="date">When was your photo taken</label>
         <input
           required
           name="date"

@@ -6,7 +6,7 @@ import './Header.scss'
 const authenticatedOptions = (
   <React.Fragment>
     <Link to="/gallery">Gallery</Link>
-    <Link to="/add-pets">Pets</Link>
+    <Link to="/pet">Pets</Link>
     <Link to="/account">Account</Link>
   </React.Fragment>
 )

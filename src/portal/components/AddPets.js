@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
+import { addPet } from '../petsApi'
 import messages from '../messages'
 import apiUrl from '../../apiConfig'
+
 
 class AddPets extends Component {
   constructor () {
@@ -25,14 +27,11 @@ class AddPets extends Component {
     event.preventDefault()
 
     const { name, nickname, age } = this.state
-    // const { flash, history, setUser } = this.props
+    const { flash, history, user } = this.props
 
-    addPet(this.state)
-      .then(handleErrors)
+    addPet(this.state, user)
       .then(() => addPet(this.state))
-      .then(handleErrors)
       .then(res => res.json())
-      // .then(res => setUser(res.user))
       .then(() => flash(messages.addPetSuccess, 'flash-success'))
       .then(() => history.push('/'))
       .catch(() => flash(messages.addPetFailure, 'flash-error'))

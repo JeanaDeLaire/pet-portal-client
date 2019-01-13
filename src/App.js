@@ -8,11 +8,12 @@ import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
-import Slideshow from './auth/components/SlideShow'
-import AddPets from './auth/components/AddPets'
-import AddImage from './auth/components/AddImage'
-import AddCare from './auth/components/AddCare'
-import Account from './auth/components/Account'
+import Slideshow from './portal/components/SlideShow'
+import Pet from './portal/components/Pet'
+import AddPets from './portal/components/AddPets'
+import AddImage from './portal/components/AddImage'
+import AddCare from './portal/components/AddCare'
+import Account from './portal/components/Account'
 
 
 
@@ -63,6 +64,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/gallery' render={() => (
             <Slideshow flash={this.flash} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/pet' render={() => (
+            <Pet flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/add-pets' render={() => (
             <AddPets flash={this.flash} user={user} />
