@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import React, { Component } from 'react'
 const apiUrl = 'http://localhost:4741'
 
 export const handleErrors = res => {
@@ -40,26 +40,49 @@ export const addPet = (pet, user) => {
   })
 }
 
-export const updatePet = pet => {
-  return fetch(apiUrl + `/pets/${id}`, {
-    method: 'PATCH',
+// export const updatePet = pet => {
+//   return fetch(apiUrl + `/pets/${_id}`, {
+//     method: 'PATCH',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Authorization':`Token token=${user.token}`
+//     },
+//     body: JSON.stringify({
+//       pet: {
+//         name: pet.name,
+//         nickname: pet.nickname,
+//         age: pet.age,
+//         owner: user
+//       }
+//     })
+//   })
+// }
+
+// export const updatePet = (data, user) => {
+//   const { _id } = data
+//   delete data._id
+//   return axios.patch(`${ apiUrl }/pets/${ _id }`, {
+//     pet: data,
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Authorization':`Token token=${user.token}`
+//     }
+//   })
+// }
+
+export const updatePet = ( _id, user ) => {
+  return fetch(apiUrl + `/pets/${_id}`, {
+    method: 'Patch',
+    pet: data,
     headers: {
       'Content-Type': 'application/json',
       'Authorization':`Token token=${user.token}`
-    },
-    body: JSON.stringify({
-      pet: {
-        name: pet.name,
-        nickname: pet.nickname,
-        age: pet.age,
-        owner: user
-      }
-    })
+    }
   })
 }
 
-export const deletePet = pet => {
-  return fetch(apiUrl + `/pets/${id}`, {
+export const deletePet = ( _id, user ) => {
+  return fetch(apiUrl + `/pets/${_id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

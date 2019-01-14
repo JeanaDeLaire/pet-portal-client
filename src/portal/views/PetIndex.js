@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Pet from '../components/Pet.js'
+import { Link } from 'react-router-dom'
 
-import { getPets } from '../petsApi.js'
+import { getPets, deletePet } from '../petsApi.js'
 
 class PetIndex extends Component {
 
@@ -28,12 +29,18 @@ class PetIndex extends Component {
 
   render() {
 
+    const { user } = this.props
+
     const pets = this.state.pets.map((data, index) => {
-      return <Pet key={ index } data={ data }/>
+      console.log(this.state.pets)
+      return <Pet key={ index } data={ data } user={ user }/>
     })
 
     return (
       <div>
+        <div>
+          <Link to="/update-pet">Update pet information</Link>
+        </div>
         { pets }
       </div>
     )

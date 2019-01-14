@@ -19,7 +19,7 @@ export const addCare = (care, user) => {
       care: {
         type: care.type,
         details: care.details,
-        pet: user
+        pet: care.pet
       }
     })
   })

@@ -15,6 +15,7 @@ import AddPets from './portal/components/AddPets'
 import AddImage from './portal/components/AddImage'
 import AddCare from './portal/components/AddCare'
 import Account from './portal/components/Account'
+import UpdatePet from './portal/views/UpdatePet'
 
 
 
@@ -77,6 +78,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/add-care' render={() => (
             <AddCare flash={this.flash} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/update-pet' render={() => (
+            <UpdatePet flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/account' render={() => (
             <Account flash={this.flash} user={user} />

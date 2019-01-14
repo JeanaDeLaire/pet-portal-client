@@ -4,5 +4,7 @@ export default {
   addImageSuccess: 'What a purrfect picture!',
   addImageFailure: 'Ruff luck. We couldn\'t upload your image',
   addCareSuccess: 'Success!',
-  addCareFailure: 'Ruff luck.'
+  addCareFailure: 'Ruff luck.',
+  updatePetSuccess: 'This furever friend has been updated',
+  updatePetFailure: 'Ruff luck.'
 }

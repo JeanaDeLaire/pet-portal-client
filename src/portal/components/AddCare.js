@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-
+import Pet from '../components/Pet'
 import { addCare } from '../caresApi'
 import messages from '../messages'
 import apiUrl from '../../apiConfig'
@@ -37,6 +37,14 @@ class AddCare extends Component {
 
   render () {
     const { type, details, pet } = this.state
+    console.log(this.state)
+
+    const pets = [
+      {
+        name: 'fido', id: 'j23ij423j498'
+      },{
+        name: 'danny', id: '2342323k'
+      }]
 
     return (
       <form className='auth-form' onSubmit={this.addCare}>
@@ -69,6 +77,15 @@ class AddCare extends Component {
           placeholder="pet"
           onChange={this.handleChange}
         />
+        <select
+          required
+          name="pet"
+          onChange={this.handleChange}
+        >
+          { pets.map((pet, index) => {
+            return <option value={pet.id} key={ index }> {pet.name} </option>
+          })}
+        </select>
         <button type="submit">Add Care Details</button>
       </form>
     )
