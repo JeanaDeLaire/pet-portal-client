@@ -8,22 +8,41 @@ export const handleErrors = res => {
   }
 }
 
-export const addImage = (picture, user) => {
+// export const addImage = (form, user) => {
+//   form = new FormData(event.target)
+//   const data = form
+//   return fetch(apiUrl + '/pictures', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Authorization':`Token token=${user.token}`
+//     },
+//     data,
+//     contentType: false,
+//     processData: false
+//   })
+// }
+
+const uploadImage = function (data, user) {
+  for(const pair of data.entries()) {
+    console.log(pair[0]+', ' + pair[1])
+  }
   return fetch(apiUrl + '/pictures', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
       'Authorization':`Token token=${user.token}`
+      // 'Content-Type': 'multipart/form-data',
+      // 'processData': 'false'
     },
-    body: JSON.stringify({
-      picture: {
-        url: picture.url,
-        description: picture.description,
-        date: picture.data,
-        pet: user
-      }
-    })
+    body: data
+    // contentType: false,
+    // processData: false
   })
+}
+
+export const addImage = function (data, user) {
+  console.log(event.target)
+  uploadImage(data, user)
 }
 
 // export const addImage = function (form, user) {

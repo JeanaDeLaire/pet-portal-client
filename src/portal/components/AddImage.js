@@ -10,10 +10,9 @@ class AddImage extends Component {
     super()
 
     this.state = {
-      url: '',
+      image: '',
       description: '',
-      date: '',
-      pet: ''
+      date: ''
     }
   }
 
@@ -23,32 +22,32 @@ class AddImage extends Component {
 
   addImage = event => {
     event.preventDefault()
-
-    const { url, description, date } = this.state
+    const data = new FormData(event.target)
+    const { image: url, description, date } = this.state
     const { flash, history, user } = this.props
-
-    addImage(this.state, user)
-      // .then(handleErrors)
-      // .then(() => addImage(this.state))
-      // .then(handleErrors)
-      // .then(res => res.json())
-      // .then(res => setUser(res.user))
-      .then(() => flash(messages.addImageSuccess, 'flash-success'))
-      .then(() => history.push('/'))
-      .catch(() => flash(messages.addImageFailure, 'flash-error'))
+    console.log(user)
+    addImage(data, user)
+  // .then(handleErrors)
+  // .then(() => addImage(this.state))
+  // .then(handleErrors)
+  // .then(res => res.json())
+  // .then(res => setUser(res.user))
+  // .then(() => flash(messages.addImageSuccess, 'flash-success'))
+  // .then(() => history.push('/'))
+  // .catch(() => flash(messages.addImageFailure, 'flash-error'))
   }
 
   render () {
-    const { url, description, date} = this.state
+    const { image: url, description, date} = this.state
 
     return (
       <form className='auth-form' encType="multipart/form-data" onSubmit={this.addImage}>
         <h3>Add Image</h3>
 
-        <label htmlFor="url">Image Upload</label>
+        <label htmlFor="image">Image Upload</label>
         <input
           required
-          name="url"
+          name="image"
           value={url}
           type="file"
           placeholder="Image Upload"
