@@ -37,17 +37,18 @@ class AddCare extends Component {
 
   render () {
     const { type, details, pet } = this.state
-    console.log(this.state)
+    const { flash, history, user } = this.props
 
-    const pets = [
-      {
-        name: 'fido', id: 'j23ij423j498'
-      },{
-        name: 'danny', id: '2342323k'
-      }]
+    // const pets = [
+    //   {
+    //     name: 'fido', id: 'j23ij423j498'
+    //   },{
+    //     name: 'danny', id: '2342323k'
+    //   }]
 
     return (
       <form className='auth-form' onSubmit={this.addCare}>
+
         <h3>Add Care</h3>
 
         <label htmlFor="type">Type Care</label>
@@ -82,8 +83,8 @@ class AddCare extends Component {
           name="pet"
           onChange={this.handleChange}
         >
-          { pets.map((pet, index) => {
-            return <option value={pet.id} key={ index }> {pet.name} </option>
+          { user.pets.map((pet, index) => {
+            return <option value={user.pets[index]._id} key={ index }> {user.pets[index].name} </option>
           })}
         </select>
         <button type="submit">Add Care Details</button>
