@@ -70,10 +70,12 @@ export const addPet = (pet, user) => {
 //   })
 // }
 
-export const updatePet = ( _id, user ) => {
-  return fetch(apiUrl + `/pets/${_id}`, {
-    method: 'Patch',
-    pet: data,
+export const updatePet = ( data, user ) => {
+  const id = data.pet
+  delete data.pet
+  return fetch(apiUrl + `/pets/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify({ pet: { ...data } }),
     headers: {
       'Content-Type': 'application/json',
       'Authorization':`Token token=${user.token}`

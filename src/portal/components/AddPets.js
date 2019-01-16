@@ -15,7 +15,6 @@ class AddPets extends Component {
       nickname: '',
       age: '',
       owner: '',
-      care: ''
     }
   }
 

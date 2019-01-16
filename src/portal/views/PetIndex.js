@@ -13,10 +13,9 @@ class PetIndex extends Component {
     }
   }
 
-  componentDidMount () {
-
-    // const { setFeedback } = this.props
+  getAllPets = () => {
     const { flash, history, user } = this.props
+    console.log(user)
 
     getPets(user)
       .then(res => {
@@ -27,13 +26,18 @@ class PetIndex extends Component {
       // .catch(() => setFeedback('unable to get all pets', 'error'))
   }
 
+  componentDidMount () {
+    // const { setFeedback } = this.props
+    this.getAllPets()
+  }
+
   render() {
 
     const { user } = this.props
 
     const pets = this.state.pets.map((data, index) => {
       console.log(this.state.pets)
-      return <Pet key={ index } data={ data } user={ user }/>
+      return <Pet key={ index } data={ data } user={ user } getAllPets={ this.getAllPets }/>
     })
 
     return (

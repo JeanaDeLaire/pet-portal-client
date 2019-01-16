@@ -38,7 +38,7 @@ class AddCare extends Component {
   render () {
     const { type, details, pet } = this.state
     const { flash, history, user } = this.props
-
+    console.log(user.pets)
     // const pets = [
     //   {
     //     name: 'fido', id: 'j23ij423j498'

@@ -10,9 +10,12 @@ import apiUrl from '../../apiConfig'
 class UpdatePet extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
+
     this.state = {
-      pets: []
+      name: '',
+      nickname: '',
+      age: '',
+      pet: ''
     }
   }
 
@@ -20,13 +23,25 @@ class UpdatePet extends Component {
     [event.target.name]: event.target.value
   })
 
+  handlePetChange = event => {
+    const { user } = this.props
+    const petId = event.target.value
+    const petData = user.pets.find(pet => pet._id === petId)
+    this.setState({
+      name: petData.name,
+      nickname: petData.nickname,
+      age: petData.age,
+      pet: petData._id
+    })
+  }
+
   updatePet = event => {
     event.preventDefault()
 
-    // const { pets } = this.state
+    const { name, nickname, age } = this.state
     const { flash, history, user } = this.props
 
-    updatePet(this.state, user)
+    updatePet({ ...this.state }, user)
       .then(res => {
         this.setState({ pets: res.data.pets })
         return res
@@ -40,11 +55,11 @@ class UpdatePet extends Component {
 
   render () {
     const { user } = this.props
-
-    const pets = this.state.pets.map((pet, index) => {
-      console.log(pet)
-      return <option value={pet._id} key={ index }> {pet.name} </option>
-    })
+    const { name, nickname, age, pet } = this.state
+    // const pets = this.state.pets.map((pet, index) => {
+    //   console.log(pet)
+    //   return <option value={pet._id} key={ index }> {pet.name} </option>
+    // })
 
     // console.log(this.state)
 
@@ -56,7 +71,7 @@ class UpdatePet extends Component {
         <input
           required
           name="name"
-          value={this.state.pets.name}
+          value={name}
           type="text"
           placeholder="Name"
           onChange={this.handleChange}
@@ -65,7 +80,7 @@ class UpdatePet extends Component {
         <input
           required
           name="nickname"
-          value={this.state.pets.nickname}
+          value={nickname}
           type="text"
           placeholder="Nickname(s)"
           onChange={this.handleChange}
@@ -74,19 +89,32 @@ class UpdatePet extends Component {
         <input
           required
           name="age"
-          value={this.state.pets.age}
+          value={age}
           type="number"
           placeholder="Age"
           onChange={this.handleChange}
         />
+
+        <label htmlFor="pet">Pet</label>
+        {/*<input
+          required
+          name="pet"
+          value={pet}
+          type="text"
+          placeholder="pet"
+          onChange={this.handleChange}
+        />*/}
+
         <select
           required
           name="pet"
-          onChange={this.handleChange}
+          onChange={this.handlePetChange}
         >
-          { pets }
+          { user.pets.map((pet, index) => {
+            return <option value={user.pets[index]._id} key={ index }> {user.pets[index].name} </option>
+          })}
         </select>
-        <button type="submit">Update Pet</button>
+        <button type="submit">Update Pet Details</button>
       </form>
     )
   }

@@ -1,4 +1,5 @@
 const apiUrl = 'http://localhost:4741'
+import axios from 'axios'
 
 export const handleErrors = res => {
   if (res.ok) {
@@ -6,6 +7,16 @@ export const handleErrors = res => {
   } else  {
     throw new Error('Recieved status in 400 or 500 range.')
   }
+}
+
+
+export const getPictures = (user) => {
+  return axios.get(apiUrl + '/pictures', {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization':`Token token=${user.token}`
+    }
+  })
 }
 
 const uploadImage = function (data, user) {

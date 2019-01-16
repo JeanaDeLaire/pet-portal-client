@@ -15,21 +15,26 @@ const properties = {
   arrows: true
 }
 
-const Slideshow = () => {
+const Slideshow = (props) => {
+  const { user } = props
+  console.log(user)
+  const pictures = user.pictures.map((data, index) => {
+    return
+  })
   return (
     <Slide {...properties}>
       <div className="each-slide">
-        <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
+        <div style={{'backgroundImage': `url(${user.pictures[0].url})`}}>
           <span>Slide 1</span>
         </div>
       </div>
       <div className="each-slide">
-        <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
+        <div style={{'backgroundImage': `url(${user.pictures[1].url})`}}>
           <span>Slide 2</span>
         </div>
       </div>
       <div className="each-slide">
-        <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
+        <div style={{'backgroundImage': `url(${user.pictures[2]})`}}>
           <span>Slide 3</span>
         </div>
       </div>
