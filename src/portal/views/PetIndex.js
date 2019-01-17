@@ -34,10 +34,11 @@ class PetIndex extends Component {
 
     const { user } = this.props
 
-    const pets = this.state.pets.map((data, index) => {
-      console.log(this.state.pets)
-      return <Pet key={ index } data={ data } user={ user } getAllPets={ this.getAllPets }/>
+    const pets = this.state.pets.map((pet, index) => {
+      console.log('this is data ', pet)
+      return <Pet key={ index } data={ pet } user={ user } getAllPets={ this.getAllPets }/>
     })
+
     return (
       <div>
         <div>

@@ -43,8 +43,8 @@ export const updateCare = care => {
   })
 }
 
-export const deleteCare = care => {
-  return fetch(apiUrl + `/cares/${id}`, {
+export const deleteCare = ( _id, user ) => {
+  return fetch(apiUrl + `/cares/${_id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

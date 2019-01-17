@@ -26,9 +26,13 @@ class AddPets extends Component {
     event.preventDefault()
 
     const { name, nickname, age } = this.state
-    const { flash, history, user } = this.props
+    const { flash, history, user, setUser } = this.props
 
     addPet(this.state, user)
+      .then(res => res.ok ? res : new Error())
+      .then(res => res.json())
+      .then(res => setUser(res.user))
+      .then(() => console.log('this.props.user is', this.props.user))
       // .then(() => addPet(this.state))
       // .then(res => res.json())
       .then(() => flash(messages.addPetSuccess, 'flash-success'))

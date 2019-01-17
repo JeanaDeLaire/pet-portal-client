@@ -9,6 +9,7 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import Slideshow from './portal/components/SlideShow'
+import Cares from './portal/components/Cares'
 import Pet from './portal/components/Pet'
 import PetIndex from './portal/views/PetIndex'
 import ImageGallery from './portal/views/ImageGallery'
@@ -31,7 +32,12 @@ class App extends Component {
     }
   }
 
-  setUser = user => this.setState({ user })
+  setUser = (user) => {
+    console.log('test setUser')
+    this.setState({ user })
+  }
+
+  // setUser = user => this.setState({ user })
 
   clearUser = () => this.setState({ user: null })
 
@@ -68,17 +74,23 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/gallery' render={() => (
             <ImageGallery flash={this.flash} user={user} />
           )} />
+          <AuthenticatedRoute user={user} path='/cares' render={() => (
+            <Cares flash={this.flash} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/pet' render={() => (
+            <Pet flash={this.flash} user={user} />
+          )} />
           <AuthenticatedRoute user={user} path='/pets' render={() => (
             <PetIndex flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/add-pets' render={() => (
-            <AddPets flash={this.flash} user={user} />
+            <AddPets flash={this.flash} setUser={this.setUser} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/add-image' render={() => (
             <AddImage flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/add-care' render={() => (
-            <AddCare flash={this.flash} user={user} />
+            <AddCare flash={this.flash} setUser={this.setUser} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/update-pet' render={() => (
             <UpdatePet flash={this.flash} user={user} />
