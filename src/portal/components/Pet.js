@@ -7,6 +7,7 @@ const Pet = props => {
     deletePet(props.data._id, props.user)
       .then(props.getAllPets)
   }
+
   return (
     <div className="Pet">
       <h1>{ props.data.name }</h1>

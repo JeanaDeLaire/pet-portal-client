@@ -11,6 +11,7 @@ import ChangePassword from './auth/components/ChangePassword'
 import Slideshow from './portal/components/SlideShow'
 import Pet from './portal/components/Pet'
 import PetIndex from './portal/views/PetIndex'
+import ImageGallery from './portal/views/ImageGallery'
 import AddPets from './portal/components/AddPets'
 import AddImage from './portal/components/AddImage'
 import AddCare from './portal/components/AddCare'
@@ -65,7 +66,7 @@ class App extends Component {
             <ChangePassword flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/gallery' render={() => (
-            <Slideshow flash={this.flash} user={user} />
+            <ImageGallery flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/pets' render={() => (
             <PetIndex flash={this.flash} user={user} />

@@ -27,7 +27,6 @@ class PetIndex extends Component {
   }
 
   componentDidMount () {
-    // const { setFeedback } = this.props
     this.getAllPets()
   }
 
@@ -39,7 +38,6 @@ class PetIndex extends Component {
       console.log(this.state.pets)
       return <Pet key={ index } data={ data } user={ user } getAllPets={ this.getAllPets }/>
     })
-
     return (
       <div>
         <div>
