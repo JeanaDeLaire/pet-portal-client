@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-const apiUrl = 'http://localhost:4741'
+const apiUrl = 'https://infinite-waters-72391.herokuapp.com/'
 
 export const handleErrors = res => {
   if (res.ok) {
