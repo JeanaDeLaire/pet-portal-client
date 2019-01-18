@@ -1,4 +1,4 @@
-const apiUrl = 'https://infinite-waters-72391.herokuapp.com/'
+const apiUrl = 'https://infinite-waters-72391.herokuapp.com'
 
 export const handleErrors = res => {
   if (res.ok) {
