@@ -20,16 +20,16 @@ class AddCare extends Component {
     [event.target.name]: event.target.value
   })
 
-  addCare = event => {
+  addACare = event => {
     event.preventDefault()
 
     const { type, details, pet } = this.state
-    const { flash, history, user } = this.props
+    const { flash, history, user, setUser } = this.props
 
     addCare(this.state, user)
-      // .then(() => addCare(this.state))
-      // .then(res => res.json())
-      // .then(res => setUser(res.user))
+      .then(res => res.ok ? res : new Error())
+      .then(res => res.json())
+      .then(res => setUser(res.user))
       .then(() => flash(messages.addCareSuccess, 'flash-success'))
       .then(() => history.push('/'))
       .catch(() => flash(messages.addCareFailure, 'flash-error'))
@@ -38,7 +38,7 @@ class AddCare extends Component {
   render () {
     const { type, details, pet } = this.state
     const { flash, history, user } = this.props
-    console.log(user.pets)
+
     // const pets = [
     //   {
     //     name: 'fido', id: 'j23ij423j498'
@@ -47,7 +47,7 @@ class AddCare extends Component {
     //   }]
 
     return (
-      <form className='auth-form' onSubmit={this.addCare}>
+      <form className='auth-form' onSubmit={this.addACare}>
 
         <h3>Add Care</h3>
 

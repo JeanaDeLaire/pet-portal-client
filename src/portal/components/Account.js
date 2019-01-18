@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../../styles/account.scss'
 
 const Account = props => {
   return (
@@ -8,7 +9,10 @@ const Account = props => {
         <Link to="/add-image">Add to Image Gallery</Link>
       </div>
       <div>
-        <Link to="/add-pets">Add Pets</Link>
+        <Link to="/add-pets">Add A New Pet</Link>
+      </div>
+      <div>
+        <Link to="/update-pet">Update A Pet</Link>
       </div>
       <div>
         <Link to="/add-care">Add Care Details</Link>

@@ -20,28 +20,27 @@ class AddImage extends Component {
     [event.target.name]: event.target.value
   })
 
-  addImage = event => {
+  addAnImage = event => {
     event.preventDefault()
+
     const data = new FormData(event.target)
     const { image: url, description, date } = this.state
-    const { flash, history, user } = this.props
-    console.log(user)
+    const { flash, history, user, setUser } = this.props
+
     addImage(data, user)
-  // .then(handleErrors)
-  // .then(() => addImage(this.state))
-  // .then(handleErrors)
-  // .then(res => res.json())
-  // .then(res => setUser(res.user))
-  // .then(() => flash(messages.addImageSuccess, 'flash-success'))
-  // .then(() => history.push('/'))
-  // .catch(() => flash(messages.addImageFailure, 'flash-error'))
+      .then(res => res.ok ? res : new Error())
+      .then(res => res.json())
+      .then(res => setUser(res.user))
+      .then(() => flash(messages.addImageSuccess, 'flash-success'))
+      .then(() => history.push('/'))
+      .catch(() => flash(messages.addImageFailure, 'flash-error'))
   }
 
   render () {
     const { image: url, description, date} = this.state
 
     return (
-      <form className='auth-form' encType="multipart/form-data" onSubmit={this.addImage}>
+      <form className='auth-form' encType="multipart/form-data" onSubmit={this.addAnImage}>
         <h3>Add Image</h3>
 
         <label htmlFor="image">Image Upload</label>

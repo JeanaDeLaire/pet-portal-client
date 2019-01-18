@@ -40,10 +40,10 @@ class PetIndex extends Component {
     })
 
     return (
-      <div>
-        <div>
+      <div className="pet">
+        {/*  <div>
           <Link to="/update-pet">Update pet information</Link>
-        </div>
+        </div> */}
         { pets }
       </div>
     )

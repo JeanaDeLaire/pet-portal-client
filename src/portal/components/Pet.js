@@ -1,10 +1,11 @@
 import React from 'react'
 import Cares from './Cares.js'
 import { deletePet } from '../petsApi.js'
+import '../../styles/pets.scss'
 
 const Pet = props => {
 
-  const { user } = props
+  const { user, setUser } = props
 
   const deleteThisPet = () => {
     deletePet(props.data._id, props.user)
@@ -17,15 +18,16 @@ const Pet = props => {
   })
 
   return (
-    <div className="Pet">
-      <h1>{ props.data.name }</h1>
+    <div className='each-pet'>
       <div className="details">
-        <p><b>ID</b>: { props.data._id }</p>
-        <p><b>Nickname</b>: { props.data.nickname }</p>
-        <p><b>Year</b>: { props.data.age }</p>
+        <h1>{ props.data.name }</h1>
+        {/*<p><b>ID</b>: { props.data._id }</p>*/}
+        <p>Nickname(s): { props.data.nickname } </p>
+        <p>Age: { props.data.age }</p>
         <button onClick={ deleteThisPet } type="submit" value="Remove">
         </button>
       </div>
+      <h3>Care Details:</h3>
       <div>
         { cares }
       </div>

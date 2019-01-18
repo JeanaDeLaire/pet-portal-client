@@ -33,7 +33,7 @@ const uploadImage = function (data, user) {
 }
 
 export const addImage = function (data, user) {
-  uploadImage(data, user)
+  return uploadImage(data, user)
 }
 
 export const deletePicture = picture => {

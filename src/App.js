@@ -87,13 +87,13 @@ class App extends Component {
             <AddPets flash={this.flash} setUser={this.setUser} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/add-image' render={() => (
-            <AddImage flash={this.flash} user={user} />
+            <AddImage flash={this.flash} setUser={this.setUser} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/add-care' render={() => (
             <AddCare flash={this.flash} setUser={this.setUser} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/update-pet' render={() => (
-            <UpdatePet flash={this.flash} user={user} />
+            <UpdatePet flash={this.flash} setUser={this.setUser} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/account' render={() => (
             <Account flash={this.flash} user={user} />
