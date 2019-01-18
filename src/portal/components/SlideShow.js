@@ -1,5 +1,6 @@
 import React from 'react'
-import { Zoom } from 'react-slideshow-image'
+import { Slide } from 'react-slideshow-image'
+import '../../styles/gallery.scss'
 
 // const images = [
 //   'https://slaterkitty.s3.amazonaws.com/pictures/71ae5d5760e2ec7c0bba8e9f15bdb693.png',
@@ -11,12 +12,11 @@ import { Zoom } from 'react-slideshow-image'
 // ]
 
 
-const zoomOutProperties = {
-  duration: 6000,
-  transitionDuration: 1000,
+const properties = {
+  duration: 5000,
+  transitionDuration: 500,
   infinite: true,
   indicators: true,
-  scale: 0.4,
   arrows: true
 }
 
@@ -25,11 +25,13 @@ const Slideshow = (props) => {
   const images = props.images
   if (images.length > 0) {
     return (
-      <Zoom {...zoomOutProperties}>
-        {
-          images.map((each, index) => <img key={index} src={each} />)
-        }
-      </Zoom>
+      <div className='images'>
+        <Slide {...properties}>
+          {
+            images.map((each, index) => <img key={index} src={each} />)
+          }
+        </Slide>
+      </div>
     )
   } else {
     return null

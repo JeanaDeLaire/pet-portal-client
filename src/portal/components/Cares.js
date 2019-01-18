@@ -12,7 +12,7 @@ const Cares = props => {
       <h4>{ props.data.type }</h4>
       <div className="details">
         {/*<p><b>ID</b>{ props.data._id }</p>*/}
-        <p><b>Details</b>{ props.data.details }</p>
+        <p><b>Details: </b>{ props.data.details }</p>
         <button onClick={ deleteThisCare } type="submit" value="Remove">
         </button>
       </div>

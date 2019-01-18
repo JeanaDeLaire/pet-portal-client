@@ -27,8 +27,8 @@ const Pet = props => {
         <button onClick={ deleteThisPet } type="submit" value="Remove">
         </button>
       </div>
-      <h3>Care Details:</h3>
       <div>
+        <h4>Care Details:</h4>
         { cares }
       </div>
     </div>
