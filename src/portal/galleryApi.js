@@ -1,4 +1,4 @@
-const apiUrl = 'https://infinite-waters-72391.herokuapp.com'
+const apiUrl = 'http://localhost:4741'
 import axios from 'axios'
 
 export const handleErrors = res => {

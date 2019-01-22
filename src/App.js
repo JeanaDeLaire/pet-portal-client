@@ -8,6 +8,7 @@ import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
+import Home from './portal/components/Home'
 import Slideshow from './portal/components/SlideShow'
 import Cares from './portal/components/Cares'
 import Pet from './portal/components/Pet'
@@ -59,6 +60,9 @@ class App extends Component {
         {flashMessage && <h3 className={flashType}>{flashMessage}</h3>}
 
         <main className="container">
+          <Route path='/home' render={() => (
+            <Home flash={this.flash} />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp flash={this.flash} setUser={this.setUser} />
           )} />

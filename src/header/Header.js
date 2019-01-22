@@ -7,7 +7,7 @@ const authenticatedOptions = (
   <React.Fragment>
     <Link to="/gallery">Gallery</Link>
     <Link to="/pets">Pets</Link>
-    <Link to="/account">Account</Link>
+    <Link to="/account"><i className="fas fa-user-circle"></i></Link>
   </React.Fragment>
 )
 
@@ -20,13 +20,13 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
   <React.Fragment>
-    <Link to="/">Home</Link>
+    <Link to="/home">Home</Link>
   </React.Fragment>
 )
 
 const Header = ({ user }) => (
   <header className="main-header">
-    <h1>Pet Portal</h1>
+    <h1 className="logo"><i className="fas fa-paw"> </i> Pet Portal</h1>
     <nav>
       { user && <span>Welcome, {user.email}</span>}
       { alwaysOptions }
