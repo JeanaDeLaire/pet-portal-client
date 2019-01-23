@@ -11,7 +11,6 @@ import '../../styles/gallery.scss'
 //   'images/slide_7.jpg'
 // ]
 
-
 const properties = {
   duration: 5000,
   transitionDuration: 500,

@@ -31,14 +31,6 @@ class ImageGallery extends Component {
   }
 
   render() {
-    // const zoomOutProperties = {
-    //   duration: 5000,
-    //   transitionDuration: 500,
-    //   infinite: true,
-    //   indicators: true,
-    //   scale: 0.4,
-    //   arrows: true
-    // }
 
     const { user } = this.props
     const images = []
@@ -46,13 +38,8 @@ class ImageGallery extends Component {
       images.push(this.state.pictures[i].url)
     }
 
-    // const pictures = this.state.pictures.map((data, index) => {
-    //   console.log(this.state.pictures)
-    //   return <Slideshow key={ index } data={ data } user={ user } getAllPictures={ this.getAllPictures }/>
-    // })
-
     return (
-      <div>
+      <div className="image-container">
         <Slideshow images={ images } />
       </div>
     )

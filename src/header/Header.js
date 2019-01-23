@@ -26,7 +26,7 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
   <header className="main-header">
-    <h1 className="logo"><i className="fas fa-paw"> </i> Pet Portal</h1>
+    <h1 className="logo-b"><i className="fas fa-paw"></i> Pet Portal</h1>
     <nav>
       { user && <span>Welcome, {user.email}</span>}
       { alwaysOptions }

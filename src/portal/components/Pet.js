@@ -2,7 +2,7 @@ import React from 'react'
 import Cares from './Cares.js'
 import { deletePet } from '../petsApi.js'
 import '../../styles/pets.scss'
-
+import { Button } from 'react-bootstrap'
 const Pet = props => {
 
   const { user, setUser } = props
@@ -19,16 +19,14 @@ const Pet = props => {
 
   return (
     <div className='each-pet'>
-      <div className="details">
-        <h1>{ props.data.name }</h1>
-        {/*<p><b>ID</b>: { props.data._id }</p>*/}
-        <p>Nickname(s): { props.data.nickname } </p>
-        <p>Age: { props.data.age }</p>
-        <button onClick={ deleteThisPet } type="submit" value="Remove">
-        </button>
+      <div className="profile">
+        <h1 className="pet-title">{ props.data.name }</h1>
+        <p className='pet-details'>Nickname(s): { props.data.nickname } </p>
+        <p className='pet-details'>Age: { props.data.age }</p>
+        <Button bsStyle="primary" className='del-pet' onClick={ deleteThisPet } type="submit" value="Remove"><i className="fas fa-trash-alt"></i></Button>
       </div>
-      <div>
-        <h4>Care Details:</h4>
+      <div className='cares'>
+        <h4><span>{ props.data.name }</span>&#39;s Care Details:</h4>
         { cares }
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { deleteCare } from '../caresApi.js'
+import { Button } from 'react-bootstrap'
 
 const Cares = props => {
 
@@ -8,13 +9,11 @@ const Cares = props => {
   }
 
   return (
-    <div className="Care Instructions">
-      <h4>{ props.data.type }</h4>
-      <div className="details">
+    <div>
+      <div className='inde-cares'>
         {/*<p><b>ID</b>{ props.data._id }</p>*/}
-        <p><b>Details: </b>{ props.data.details }</p>
-        <button onClick={ deleteThisCare } type="submit" value="Remove">
-        </button>
+        <p>{ props.data.type }: { props.data.details }</p>
+        <Button className='button' bsStyle="primary" onClick={ deleteThisCare } type="submit" value="Remove"><i className="fas fa-trash-alt"></i></Button>
       </div>
     </div>
   )

@@ -1,4 +1,6 @@
 .Account {
   float: right;
+  display: flex;
+  flex-direction: column;
   margin: 10px;
 }

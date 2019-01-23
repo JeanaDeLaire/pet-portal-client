@@ -1,12 +1,28 @@
 .images {
   text-align: center;
-  margin: 40px auto;
-  object-fit: cover;
-  width: 80%;
+  justify-content: center;
+  align-items: center;
+  // object-fit: cover;
+  // width: 80%;
+  // max-height: 400px;
+  max-width: 900px;
   height: auto;
-  //
 }
 
-.nav {
-  color: blue;
+.images-wrap {
+  max-height: 600px;
+  overflow: auto;
+  margin: 20px auto;
+}
+
+.react-slideshow-container .nav {
+  color: #0075df;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
 }

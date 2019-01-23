@@ -1,3 +1,33 @@
+.home-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .logo {
   font-family: 'Barrio', cursive;
+  font-size: 3vw;
+}
+
+.jumbo {
+  width: 70vw;
+  height: 600px;
+  background-image: url('../pictures/pexels-photo-1108099.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 20px auto;
+}
+
+.description {
+  width: 68vw;
+  font-size: 20px;
+  text-align: center;
+}
+
+hr {
+  width: 70vw;
+  display: block;
+  overflow: hidden;
+  border-style: inset;
+  border: 1px solid black;
 }
