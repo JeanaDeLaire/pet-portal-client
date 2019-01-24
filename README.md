@@ -1,5 +1,5 @@
 
-# Welcome to Pet Portal.
+# Pet Portal
 
 ![Front End Screen Shot](https://user-images.githubusercontent.com/41646757/51698390-10659300-1fd8-11e9-982a-d5215b51f4f2.png)
 ## Visit the site here:
