@@ -3,9 +3,8 @@
 
 ![Front End Screen Shot](https://user-images.githubusercontent.com/41646757/51698390-10659300-1fd8-11e9-982a-d5215b51f4f2.png)
 ## Visit the site here:
-[jeanadelaire.github.io/pet-portal-client](https://jeanadelaire.github.io/pet-portal-client/#/)
-## View the back-end repository and heroku page here:
 - [Pet Portal Client](https://jeanadelaire.github.io/pet-portal-client/#/)
+## View the back-end repository and heroku page here:
 - [Api Github Repository](https://github.com/JeanaDeLaire/pet-portal-api)
 - [Heroku URL](https://infinite-waters-72391.herokuapp.com/)
 
