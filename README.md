@@ -1,8 +1,9 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
+# Welcome to Pet Portal.
+
+![Front End Screen Shot](https://user-images.githubusercontent.com/41646757/51698390-10659300-1fd8-11e9-982a-d5215b51f4f2.png)
 ## Visit the site here:
 [jeanadelaire.github.io/pet-portal-client](https://jeanadelaire.github.io/pet-portal-client/#/)
-![Front End Screen Shot](https://user-images.githubusercontent.com/41646757/51698390-10659300-1fd8-11e9-982a-d5215b51f4f2.png)
 ## View the back-end repository and heroku page here:
 - [Pet Portal Client](https://jeanadelaire.github.io/pet-portal-client/#/)
 - [Api Github Repository](https://github.com/JeanaDeLaire/pet-portal-api)
@@ -32,3 +33,6 @@ The next big improvement is to add the ability for users to delete photos from t
 
 ## ERD
 ![ERD](https://user-images.githubusercontent.com/41646757/51697624-443fb900-1fd6-11e9-9477-0be2dbc362ab.png)
+
+#### This project was completed as part of the Web Development Immersive program offered through General Assembly in Providence, Rhode Island.
+[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
