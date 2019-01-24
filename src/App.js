@@ -60,7 +60,7 @@ class App extends Component {
         {flashMessage && <h3 className={flashType}>{flashMessage}</h3>}
 
         <main className="container">
-          <Route path='/home' render={() => (
+          <Route exact path='/' render={() => (
             <Home flash={this.flash} />
           )} />
           <Route path='/sign-up' render={() => (
