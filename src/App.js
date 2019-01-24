@@ -20,8 +20,6 @@ import AddCare from './portal/components/AddCare'
 import Account from './portal/components/Account'
 import UpdatePet from './portal/views/UpdatePet'
 
-
-
 class App extends Component {
   constructor () {
     super()

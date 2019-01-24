@@ -39,18 +39,21 @@ class UpdatePet extends Component {
     event.preventDefault()
 
     const { name, nickname, age } = this.state
-    const { flash, history, user } = this.props
+    const { flash, history, user, setUser } = this.props
 
     updatePet({ ...this.state }, user)
-      .then(res => {
-        this.setState({ pets: res.data.pets })
-        return res
-      })
+      // .then(res => {
+      //   this.setState({ pets: res.data.pets })
+      //   return res
+      // })
+      .then(res => res.ok ? res : new Error())
+      .then(res => res.json())
+      .then(res => setUser(res.user))
       // .then(() => addPet(this.state))
       // .then(res => res.json())
-      .then(() => flash(messages.addPetSuccess, 'flash-success'))
+      .then(() => flash(messages.updatePetSuccess, 'flash-success'))
       .then(() => history.push('/'))
-      .catch(() => flash(messages.addPetFailure, 'flash-error'))
+      .catch(() => flash(messages.updatePetFailure, 'flash-error'))
   }
 
   render () {
