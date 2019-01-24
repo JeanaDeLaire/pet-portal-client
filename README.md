@@ -4,9 +4,9 @@
 [jeanadelaire.github.io/pet-portal-client](https://jeanadelaire.github.io/pet-portal-client/#/)
 ![Front End Screen Shot](https://user-images.githubusercontent.com/41646757/51698390-10659300-1fd8-11e9-982a-d5215b51f4f2.png)
 ## View the back-end repository and heroku page here:
-[Pet Portal Client](https://jeanadelaire.github.io/pet-portal-client/#/)
-[Api Github Repository](https://github.com/JeanaDeLaire/pet-portal-api)
-[Heroku URL](https://infinite-waters-72391.herokuapp.com/)
+- [Pet Portal Client](https://jeanadelaire.github.io/pet-portal-client/#/)
+- [Api Github Repository](https://github.com/JeanaDeLaire/pet-portal-api)
+- [Heroku URL](https://infinite-waters-72391.herokuapp.com/)
 
 ## Technologies used:
 The front-end of this project is built in React.js with JSX and styled using CSS and React Bootstrap. The back-end is built using an Express api with Mongo.db and Mongoose to establish resource schemas and CRUD routes.
@@ -18,11 +18,11 @@ Planning for this project commenced with establishing user stories, preliminary 
 The next big improvement is to add the ability for users to delete photos from their carousel. One additional goal is to allow photos to be open view and shared with other users.
 
 ## User Stories:
--As a user, I should be able to login to access my information in this app.
--As a user, I want to be able to have the option to upload information on multiple pets.
--As a user, I want to be able to add pictures of my pets.
--As a user, I want to be able to update each individual piece of data associated with my pet.
--As a user, I want all of my files to be private to just me.
+- As a user, I should be able to login to access my information in this app.
+- As a user, I want to be able to have the option to upload information on multiple pets.
+- As a user, I want to be able to add pictures of my pets.
+- As a user, I want to be able to update each individual piece of data associated with my pet.
+- As a user, I want all of my files to be private to just me.
 
 ## WireFrames:
 
