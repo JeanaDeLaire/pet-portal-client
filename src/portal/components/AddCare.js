@@ -83,6 +83,7 @@ class AddCare extends Component {
           name="pet"
           onChange={this.handleChange}
         >
+          <option value="" disabled selected>Choose your pet...</option>
           { user.pets.map((pet, index) => {
             return <option value={user.pets[index]._id} key={ index }> {user.pets[index].name} </option>
           })}
