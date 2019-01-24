@@ -31,7 +31,7 @@ The next big improvement is to add the ability for users to delete photos from t
 ![Wireframes](https://user-images.githubusercontent.com/41646757/51697592-30945280-1fd6-11e9-8844-331b76a2e859.png)
 
 ## ERD
-![ERD](https://user-images.githubusercontent.com/41646757/51697624-443fb900-1fd6-11e9-9477-0be2dbc362ab.png)
+![ERD](https://media.git.generalassemb.ly/user/17062/files/c7afd900-1fdb-11e9-8148-a9b4ce673162)
 
 #### This project was completed as part of the Web Development Immersive program offered through General Assembly in Providence, Rhode Island.
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
