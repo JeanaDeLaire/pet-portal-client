@@ -24,6 +24,13 @@ The next big improvement is to add the ability for users to delete photos from t
 - As a user, I want to be able to update each individual piece of data associated with my pet.
 - As a user, I want all of my files to be private to just me.
 
+## Set-up Instructions:
+I welcome you to contribute to this project. Simply follow these steps and submit a pull request when you have something to add:
+- Fork this repository
+- Clone it locally
+- Run NPM Install
+- Create a new feature branch and begin working.
+
 ## WireFrames:
 
 ![WireFrames](https://user-images.githubusercontent.com/41646757/51697544-0e023980-1fd6-11e9-9264-e85c741749b7.png)

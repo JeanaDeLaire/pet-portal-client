@@ -15,15 +15,12 @@ class PetIndex extends Component {
 
   getAllPets = () => {
     const { flash, history, user } = this.props
-    console.log(user)
 
     getPets(user)
       .then(res => {
         this.setState({ pets: res.data.pets })
         return res
       })
-      // .then(res => setFeedback(`got ${ res.data.pets.length } pets`, 'success'))
-      // .catch(() => setFeedback('unable to get all pets', 'error'))
   }
 
   componentDidMount () {
@@ -35,7 +32,6 @@ class PetIndex extends Component {
     const { user } = this.props
 
     const pets = this.state.pets.map((pet, index) => {
-      console.log('this is data ', pet)
       return <Pet key={ index } data={ pet } user={ user } getAllPets={ this.getAllPets }/>
     })
 

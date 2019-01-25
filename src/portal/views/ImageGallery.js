@@ -15,15 +15,12 @@ class ImageGallery extends Component {
   getAllPictures = () => {
 
     const { flash, history, user } = this.props
-    console.log(user)
 
     getPictures(user)
       .then(res => {
         this.setState({ pictures: res.data.pictures })
         return res
       })
-      // .then(res => setFeedback(`got ${ res.data.pets.length } pets`, 'success'))
-      // .catch(() => setFeedback('unable to get all pets', 'error'))
   }
 
   componentDidMount () {

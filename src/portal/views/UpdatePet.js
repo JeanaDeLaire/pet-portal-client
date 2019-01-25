@@ -42,15 +42,9 @@ class UpdatePet extends Component {
     const { flash, history, user, setUser } = this.props
 
     updatePet({ ...this.state }, user)
-      // .then(res => {
-      //   this.setState({ pets: res.data.pets })
-      //   return res
-      // })
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
       .then(res => setUser(res.user))
-      // .then(() => addPet(this.state))
-      // .then(res => res.json())
       .then(() => flash(messages.updatePetSuccess, 'flash-success'))
       .then(() => history.push('/'))
       .catch(() => flash(messages.updatePetFailure, 'flash-error'))
@@ -59,12 +53,6 @@ class UpdatePet extends Component {
   render () {
     const { user } = this.props
     const { name, nickname, age, pet } = this.state
-    // const pets = this.state.pets.map((pet, index) => {
-    //   console.log(pet)
-    //   return <option value={pet._id} key={ index }> {pet.name} </option>
-    // })
-
-    // console.log(this.state)
 
     return (
       <form className='auth-form' onSubmit={this.updatePet}>
@@ -99,14 +87,6 @@ class UpdatePet extends Component {
         />
 
         <label htmlFor="pet">Pet</label>
-        {/*<input
-          required
-          name="pet"
-          value={pet}
-          type="text"
-          placeholder="pet"
-          onChange={this.handleChange}
-        />*/}
 
         <select
           required

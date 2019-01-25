@@ -4,8 +4,11 @@ import { Button } from 'react-bootstrap'
 
 const Cares = props => {
 
+  const { user, setUser } = props
+
   const deleteThisCare = () => {
     deleteCare(props.data._id, props.user)
+      .then(props.getAllPets)
   }
 
   return (

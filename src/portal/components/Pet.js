@@ -14,7 +14,7 @@ const Pet = props => {
   }
 
   const cares = props.data.cares.map((care, index) => {
-    return <Cares key={ index } data={ care } user={ user }/>
+    return <Cares key={ index } data={ care } user={ user } getAllPets={ props.getAllPets }/>
   })
 
   return (

@@ -9,7 +9,6 @@ export const handleErrors = res => {
   }
 }
 
-
 export const getPictures = (user) => {
   return axios.get(apiUrl + '/pictures', {
     headers: {
@@ -20,9 +19,6 @@ export const getPictures = (user) => {
 }
 
 const uploadImage = function (data, user) {
-  for(const pair of data.entries()) {
-    console.log(pair[0]+', ' + pair[1])
-  }
   return fetch(apiUrl + '/pictures', {
     method: 'POST',
     headers: {

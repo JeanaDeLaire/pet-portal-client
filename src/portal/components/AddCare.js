@@ -39,13 +39,6 @@ class AddCare extends Component {
     const { type, details, pet } = this.state
     const { flash, history, user } = this.props
 
-    // const pets = [
-    //   {
-    //     name: 'fido', id: 'j23ij423j498'
-    //   },{
-    //     name: 'danny', id: '2342323k'
-    //   }]
-
     return (
       <form className='auth-form' onSubmit={this.addACare}>
 

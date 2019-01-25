@@ -10,9 +10,6 @@ export const handleErrors = res => {
   }
 }
 
-// export const getPets = () => axios.get(apiUrl + '/pets')
-
-
 export const getPets = (user) => {
   return axios.get(apiUrl + '/pets', {
     headers: {
