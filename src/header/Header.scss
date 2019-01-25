@@ -1,5 +1,9 @@
 $charcoal: #bbb;
 
+body {
+  background-color: #fafafa;
+}
+
 .logo-b {
   font-family: 'Barrio', cursive;
   margin-top: 15px;
@@ -16,12 +20,19 @@ $charcoal: #bbb;
   display: flex;
   height: 100px;
   padding: 0 20px;
+  background-color: #31708f;
 
   a,
   span {
-    font-size: 1.2em;
+    font-size: 1.6em;
+    // font-weight: 400;
     margin: 0 15px;
+    font-family: 'Ramabhadra', sans-serif;
   }
+}
+
+  a {
+  color: #fafafa;
 }
 
 .main-header > nav {
@@ -29,6 +40,7 @@ $charcoal: #bbb;
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
+  // color: #d86b72;
 }
 
 @media (max-width: 600px) {

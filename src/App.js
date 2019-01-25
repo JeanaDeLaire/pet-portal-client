@@ -32,7 +32,6 @@ class App extends Component {
   }
 
   setUser = (user) => {
-    console.log('test setUser')
     this.setState({ user })
   }
 

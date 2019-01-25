@@ -6,22 +6,22 @@ const Account = props => {
   return (
     <div className="Account">
       <div>
-        <Link to="/add-image">Add to Image Gallery</Link>
+        <Link to="/add-image" className='account-link'>Add to Image Gallery</Link>
       </div>
       <div>
-        <Link to="/add-pets">Add A New Pet</Link>
+        <Link to="/add-pets" className='account-link'>Add A New Pet</Link>
       </div>
       <div>
-        <Link to="/update-pet">Update A Pet</Link>
+        <Link to="/update-pet" className='account-link'>Update A Pet</Link>
       </div>
       <div>
-        <Link to="/add-care">Add Care Details</Link>
+        <Link to="/add-care" className='account-link'>Add Care Details</Link>
       </div>
       <div>
-        <Link to="/change-password">Change Password</Link>
+        <Link to="/change-password" className='account-link'>Change Password</Link>
       </div>
       <div>
-        <Link to="/sign-out">Sign Out</Link>
+        <Link to="/sign-out" className='account-link'>Sign Out</Link>
       </div>
     </div>
   )

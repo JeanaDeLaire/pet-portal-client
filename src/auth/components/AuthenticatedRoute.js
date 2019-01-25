@@ -19,7 +19,7 @@ const AuthenticatedRoute = ({
   // if props do not include a `user` object then redirect to home
   } else {
     return <Route {...rest} render={props =>
-      user ? <Component {...props} /> : <Redirect to='/home' />
+      user ? <Component {...props} /> : <Redirect to='/' />
     } />
   }
 }

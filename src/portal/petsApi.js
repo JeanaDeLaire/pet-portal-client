@@ -40,36 +40,6 @@ export const addPet = (pet, user) => {
   })
 }
 
-// export const updatePet = pet => {
-//   return fetch(apiUrl + `/pets/${_id}`, {
-//     method: 'PATCH',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Authorization':`Token token=${user.token}`
-//     },
-//     body: JSON.stringify({
-//       pet: {
-//         name: pet.name,
-//         nickname: pet.nickname,
-//         age: pet.age,
-//         owner: user
-//       }
-//     })
-//   })
-// }
-
-// export const updatePet = (data, user) => {
-//   const { _id } = data
-//   delete data._id
-//   return axios.patch(`${ apiUrl }/pets/${ _id }`, {
-//     pet: data,
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Authorization':`Token token=${user.token}`
-//     }
-//   })
-// }
-
 export const updatePet = ( data, user ) => {
   const id = data.pet
   delete data.pet

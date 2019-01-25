@@ -3,6 +3,7 @@ import Cares from './Cares.js'
 import { deletePet } from '../petsApi.js'
 import '../../styles/pets.scss'
 import { Button } from 'react-bootstrap'
+
 const Pet = props => {
 
   const { user, setUser } = props
@@ -11,9 +12,8 @@ const Pet = props => {
     deletePet(props.data._id, props.user)
       .then(props.getAllPets)
   }
-  console.log('this is props ', props)
+
   const cares = props.data.cares.map((care, index) => {
-    console.log('this is data ', care)
     return <Cares key={ index } data={ care } user={ user }/>
   })
 
@@ -26,7 +26,7 @@ const Pet = props => {
         <Button bsStyle="primary" className='del-pet' onClick={ deleteThisPet } type="submit" value="Remove"><i className="fas fa-trash-alt"></i></Button>
       </div>
       <div className='cares'>
-        <h4><span>{ props.data.name }</span>&#39;s Care Details:</h4>
+        <h4 className='title-cares'><span>{ props.data.name }</span>&#39;s Care Details:</h4>
         { cares }
       </div>
     </div>

@@ -1,6 +1,13 @@
+$charcoal: #ccc;
+
 .Account {
   float: right;
   display: flex;
   flex-direction: column;
   margin: 10px;
+  color: $charcoal;
+}
+
+.account-link {
+  color: #292b2c;
 }
