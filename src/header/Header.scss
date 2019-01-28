@@ -35,6 +35,12 @@ body {
   color: #fafafa;
 }
 
+a:hover,
+a:active {
+  color: #d86b72 !important;
+  text-decoration: none !important;
+}
+
 .main-header > nav {
   align-items: center;
   display: flex;

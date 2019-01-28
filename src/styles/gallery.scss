@@ -9,7 +9,7 @@
 
 .inde-image {
   max-height: 600px !important;
-  min-width: 900px !important;
+  min-width: 300px !important;
   width: 800px !important;
   max-width: 800px !important;
   overflow-y: scroll;
@@ -20,13 +20,18 @@
   display: flex;
 }
 
-.images-wrap {
-  margin: 0 auto;
-}
-
 .react-slideshow-container .nav {
   color: #0075df;
   background-color: #fafafa;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .inde-image {
+    width: 30% !important;
+    height: auto !important;
+    object-fit: scale-down !important;
+    margin-right: 20px;
+  }
 }

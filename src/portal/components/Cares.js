@@ -12,12 +12,10 @@ const Cares = props => {
   }
 
   return (
-    <div>
-      <div className='inde-cares'>
-        {/*<p><b>ID</b>{ props.data._id }</p>*/}
-        <p>{ props.data.type }: { props.data.details }</p>
-        <Button className='button' bsStyle="primary" onClick={ deleteThisCare } type="submit" value="Remove"><i className="fas fa-trash-alt"></i></Button>
-      </div>
+    <div className='inde-cares'>
+      {/*<p><b>ID</b>{ props.data._id }</p>*/}
+      <p>{ props.data.type }: { props.data.details }</p>
+      <Button className='button' bsStyle="primary" onClick={ deleteThisCare } type="submit" value="Remove"><i className="fas fa-trash-alt"></i></Button>
     </div>
   )
 }
