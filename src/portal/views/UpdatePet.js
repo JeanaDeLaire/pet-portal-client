@@ -5,6 +5,8 @@ import { withRouter } from 'react-router-dom'
 import { updatePet } from '../petsApi'
 import messages from '../messages'
 import apiUrl from '../../apiConfig'
+import '../../styles/forms.scss'
+
 
 
 class UpdatePet extends Component {

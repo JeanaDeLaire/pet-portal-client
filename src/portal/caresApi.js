@@ -8,20 +8,14 @@ export const handleErrors = res => {
   }
 }
 
-export const addCare = (care, user) => {
+export const addCare = ( data, user ) => {
   return fetch(apiUrl + '/cares', {
     method: 'POST',
+    body: JSON.stringify({ care: { ...data } }),
     headers: {
       'Content-Type': 'application/json',
       'Authorization':`Token token=${user.token}`
     },
-    body: JSON.stringify({
-      care: {
-        type: care.type,
-        details: care.details,
-        pet: care.pet
-      }
-    })
   })
 }
 

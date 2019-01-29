@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { addPet } from '../petsApi'
 import messages from '../messages'
 import apiUrl from '../../apiConfig'
-
+import '../../styles/forms.scss'
 
 class AddPets extends Component {
   constructor () {

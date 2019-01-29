@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { addImage } from '../galleryApi'
 import messages from '../messages'
 import apiUrl from '../../apiConfig'
+import '../../styles/forms.scss'
 
 class AddImage extends Component {
   constructor () {

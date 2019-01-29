@@ -4,6 +4,7 @@ import Pet from '../components/Pet'
 import { addCare } from '../caresApi'
 import messages from '../messages'
 import apiUrl from '../../apiConfig'
+import '../../styles/forms.scss'
 
 class AddCare extends Component {
   constructor () {
@@ -20,13 +21,22 @@ class AddCare extends Component {
     [event.target.name]: event.target.value
   })
 
+  handlePetChange = event => {
+    const { user } = this.props
+    const petId = event.target.value
+    const petData = user.pets.find(pet => pet._id === petId)
+    this.setState({
+      pet: petData._id
+    })
+  }
+
   addACare = event => {
     event.preventDefault()
 
-    const { type, details, pet } = this.state
+    const { type, details } = this.state
     const { flash, history, user, setUser } = this.props
 
-    addCare(this.state, user)
+    addCare({ ...this.state}, user)
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
       .then(res => setUser(res.user))
@@ -37,7 +47,7 @@ class AddCare extends Component {
 
   render () {
     const { type, details, pet } = this.state
-    const { flash, history, user } = this.props
+    const { user } = this.props
 
     return (
       <form className='auth-form' onSubmit={this.addACare}>
@@ -63,18 +73,11 @@ class AddCare extends Component {
           onChange={this.handleChange}
         />
         <label htmlFor="pet">Pet</label>
-        <input
-          required
-          name="pet"
-          value={pet}
-          type="text"
-          placeholder="pet"
-          onChange={this.handleChange}
-        />
+
         <select
           required
           name="pet"
-          onChange={this.handleChange}
+          onChange={this.handlePetChange}
         >
           <option value="" disabled selected>Choose your pet...</option>
           { user.pets.map((pet, index) => {
