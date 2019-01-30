@@ -28,7 +28,7 @@ const Header = ({ user }) => (
   <header className="main-header">
     <h1 className="logo-b"><i className="fas fa-paw"></i> Pet Portal</h1>
     <nav>
-      { user && <span>Welcome, {user.username}</span>}
+      { user && <span className='user'>Welcome, {user.username}</span>}
       { alwaysOptions }
       { user ? authenticatedOptions : unauthenticatedOptions }
     </nav>

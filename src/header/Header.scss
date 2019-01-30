@@ -8,14 +8,24 @@ body {
   font-family: 'Barrio', cursive;
   margin-top: 15px;
   font-size: 45px;
+  color: #d1dee6;
+}
+
+.user {
+  color: #d1dee6;
 }
 
 .fa-paw {
-  color: #ca7175;
+  // color: #ca7175;
+  color: #a7a3a3;
+}
+
+.fa-user-circle {
+  color: #a7a3a3;
 }
 
 a {
-  color: #fafafa;
+  color: #d1dee6;
 }
 
 .main-header {
@@ -24,7 +34,8 @@ a {
   display: flex;
   height: 100px;
   padding: 0 20px;
-  background-color: #31708f;
+  // background-color: #31708f;
+  background-color: rgba(49, 112, 143, 1);
 
   a,
   span {
@@ -36,8 +47,13 @@ a {
 }
 
 a:hover {
-  color: #d86b72 !important;
-  text-decoration: none !important;
+  color: #d1dee6;
+  text-decoration: underline;
+}
+
+a:focus {
+  color: #d1dee6;
+  text-decoration: underline;
 }
 
 .main-header > nav {
