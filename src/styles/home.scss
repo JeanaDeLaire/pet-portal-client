@@ -14,11 +14,12 @@
 }
 
 .jumbo {
-  width: 70vw;
+  width: 73vw;
   height: 600px;
   background-image: url('../pictures/pexels-photo-1108099.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   margin: 20px auto;
   position: relative;
 }
@@ -39,8 +40,8 @@
 
 .description {
   color: #fafafa;
-  font-size: 24px;
-  padding: 0 5%;
+  font-size: 23px;
+  padding: 2% 5%;
   position: relative;
   top: 50%;
   left: 50%;
@@ -53,10 +54,6 @@
 .jumbo:hover .overlay {
   height: 50%;
 }
-//
-// .overlay:hover {
-//   height: 100%;
-// }
 
 hr {
   width: 70vw;
@@ -64,4 +61,24 @@ hr {
   overflow: hidden;
   border-style: inset;
   border: 1px solid rgba(49, 112, 143, 1);
+}
+
+@media only screen and (max-width: 800px) {
+  .description {
+    font-size: 21px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .jumbo {
+    width: 97%;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .jumbo:hover .overlay {
+    height: 55%;
+  }
 }

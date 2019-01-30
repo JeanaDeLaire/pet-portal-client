@@ -16,7 +16,6 @@ const Home = props => {
       </Jumbotron>
       <hr></hr>
 
-
     </div>
   )
 }
