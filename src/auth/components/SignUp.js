@@ -12,6 +12,7 @@ class SignUp extends Component {
     this.state = {
       email: '',
       password: '',
+      username: '',
       passwordConfirmation: ''
     }
   }
@@ -23,7 +24,7 @@ class SignUp extends Component {
   signUp = event => {
     event.preventDefault()
 
-    const { email, password, passwordConfirmation} = this.state
+    const { email, username, password, passwordConfirmation} = this.state
     const { flash, history, setUser } = this.props
 
     signUp(this.state)
@@ -38,7 +39,7 @@ class SignUp extends Component {
   }
 
   render () {
-    const { email, password, passwordConfirmation} = this.state
+    const { email, username, password, passwordConfirmation} = this.state
 
     return (
       <form className='auth-form' onSubmit={this.signUp}>
@@ -51,6 +52,15 @@ class SignUp extends Component {
           value={email}
           type="email"
           placeholder="Email"
+          onChange={this.handleChange}
+        />
+        <label htmlFor="username">Username</label>
+        <input
+          required
+          name="username"
+          value={username}
+          type="text"
+          placeholder="Username"
           onChange={this.handleChange}
         />
         <label htmlFor="password">Password</label>
