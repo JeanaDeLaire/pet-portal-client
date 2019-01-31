@@ -23,19 +23,42 @@
 }
 
 .react-slideshow-container .nav {
-  color: #0075df;
-  background-color: #fafafa;
+  font-family: 'Londrina Outline', cursive;
+  // color: #31708f;
+  color: #000;
+  background-color: rgba(0, 0, 0, 0);
+  // margin: 0;
+  margin-top: -40px;
   justify-content: center;
   align-items: center;
+  align-self: flex-start;
+  // flex-flow: column-reverse;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  font-size: 50px;
+  // z-index: 10;
+  position: relative;
+}
+
+.react-slideshow-container .nav:hover {
+  color: #d1dee6;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.indicators {
+  margin-top: -78.4vh !important;
+  position: relative;
+  color: #31708f;
 }
 
 @media only screen and (max-width: 1000px) {
   .images {
-    width: 420px !important;
+    width: 560px !important;
   }
 
   .inde-image {
-    width: 400px !important;
+    width: 540px !important;
     height: auto !important;
     object-fit: scale-down !important;
   }
@@ -43,12 +66,63 @@
 
 @media only screen and (max-width: 600px) {
   .images {
-    width: 320px !important;
+    width: 350px !important;
+  }
+
+  .inde-image {
+    width: 350px !important;
+    height: auto !important;
+    object-fit: scale-down !important;
+  }
+
+  .indicators {
+    margin-top: -62vh !important;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .indicators {
+    margin-top: -67.5vh !important;
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 385px) {
+  .indicators {
+    margin-top: -74vh !important;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .indicators {
+    margin-top: -73.5vh !important;
+  }
+}
+
+@media (min-height: 812px) and (max-width: 375px) {
+  .indicators {
+    margin-top: -61vh !important;
+  }
+}
+
+@media (min-height: 823px) and (max-width: 411px) {
+  .indicators {
+    margin-top: -60vh !important;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .images {
+    width: 300px !important;
   }
 
   .inde-image {
     width: 300px !important;
     height: auto !important;
     object-fit: scale-down !important;
+  }
+
+  .indicators {
+    margin-top: -426px !important;
   }
 }
