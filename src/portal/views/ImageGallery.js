@@ -19,6 +19,7 @@ class ImageGallery extends Component {
     getPictures(user)
       .then(res => {
         this.setState({ pictures: res.data.pictures })
+        // console.log(res.data.pictures)
         return res
       })
   }

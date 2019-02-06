@@ -12,6 +12,7 @@ const properties = {
 
 const Slideshow = (props) => {
   const images = props.images
+  console.log(props)
   if (images.length > 0) {
     return (
       <div className='images'>
