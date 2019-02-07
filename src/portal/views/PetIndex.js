@@ -18,6 +18,7 @@ class PetIndex extends Component {
 
     getPets(user)
       .then(res => {
+        // reset the state of user to reflect accurate data
         this.setState({ pets: res.data.pets })
         return res
       })
@@ -30,16 +31,13 @@ class PetIndex extends Component {
   render() {
 
     const { user } = this.props
-
+    // map each index to create array to pull from in component
     const pets = this.state.pets.map((pet, index) => {
       return <Pet key={ index } data={ pet } user={ user } getAllPets={ this.getAllPets }/>
     })
 
     return (
       <div className="pet">
-        {/*  <div>
-          <Link to="/update-pet">Update pet information</Link>
-        </div> */}
         { pets }
       </div>
     )

@@ -1,5 +1,7 @@
 const apiUrl = 'http://localhost:4741'
 
+// contains CRUD calls for data related to cares 
+
 export const handleErrors = res => {
   if (res.ok) {
     return res

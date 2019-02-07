@@ -29,6 +29,8 @@ class AddImage extends Component {
     const { flash, history, user, setUser } = this.props
 
     addImage(data, user)
+    // after api call reset the user from the app level
+    // to pass accurate data in props
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
       .then(res => setUser(res.user))

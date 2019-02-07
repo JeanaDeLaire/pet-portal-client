@@ -7,8 +7,6 @@ import messages from '../messages'
 import apiUrl from '../../apiConfig'
 import '../../styles/forms.scss'
 
-
-
 class UpdatePet extends Component {
   constructor(props) {
     super(props)

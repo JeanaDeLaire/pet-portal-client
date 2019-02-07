@@ -1,6 +1,8 @@
 const apiUrl = 'http://localhost:4741'
 import axios from 'axios'
 
+// contains CRUD calls for data related to photo 
+
 export const handleErrors = res => {
   if (res.ok) {
     return res

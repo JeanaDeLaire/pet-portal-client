@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { Component } from 'react'
 const apiUrl = 'http://localhost:4741'
 
+// contains CRUD calls for data related to pets
+
 export const handleErrors = res => {
   if (res.ok) {
     return res

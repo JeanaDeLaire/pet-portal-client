@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../../styles/account.scss'
 
+// component containing forms for CRUD actions
+
 const Account = props => {
   return (
     <div className="Account">

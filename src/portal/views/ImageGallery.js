@@ -19,7 +19,6 @@ class ImageGallery extends Component {
     getPictures(user)
       .then(res => {
         this.setState({ pictures: res.data.pictures })
-        // console.log(res.data.pictures)
         return res
       })
   }
@@ -29,16 +28,20 @@ class ImageGallery extends Component {
   }
 
   render() {
-
     const { user } = this.props
+    // create arrays for slideshow component
+    // this matches input data structure
     const images = []
+    const descriptions = []
+
     for (let i = 0; i < this.state.pictures.length; i++) {
       images.push(this.state.pictures[i].url)
+      descriptions.push(this.state.pictures[i].description)
     }
 
     return (
       <div className="image-container">
-        <Slideshow images={ images } />
+        <Slideshow images={ images } descriptions={ descriptions } />
       </div>
     )
   }

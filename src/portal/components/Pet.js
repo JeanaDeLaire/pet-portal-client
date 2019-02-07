@@ -10,6 +10,7 @@ const Pet = props => {
 
   const deleteThisPet = () => {
     deletePet(props.data._id, props.user)
+      // get all pets to refresh page after deleting a pet
       .then(props.getAllPets)
   }
 
