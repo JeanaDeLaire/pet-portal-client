@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom'
 import { getPets, deletePet } from '../petsApi.js'
 
 class PetIndex extends Component {
-
+  // stateful component for user.pets
   constructor(props) {
     super(props)
     this.state = {
       pets: []
     }
   }
-
+  // define props for get all pets api call
   getAllPets = () => {
-    const { flash, history, user } = this.props
+    const { user } = this.props
 
     getPets(user)
       .then(res => {
@@ -23,7 +23,7 @@ class PetIndex extends Component {
         return res
       })
   }
-
+  // render when component loads
   componentDidMount () {
     this.getAllPets()
   }

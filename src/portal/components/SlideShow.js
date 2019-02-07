@@ -2,11 +2,14 @@ import React from 'react'
 import { Slide } from 'react-slideshow-image'
 import '../../styles/gallery.scss'
 
+// this component comes from the following project:
+// https://www.npmjs.com/package/react-slideshow-image
+
 const properties = {
   duration: 5000,
   transitionDuration: 500,
   infinite: true,
-  indicators: true,
+  indicators: false,
   arrows: true
 }
 
@@ -17,7 +20,7 @@ const Slideshow = (props) => {
   if (images.length > 0) {
     return (
       <div className='images'>
-        {/* this section displays image descriptions
+        {/* my code hack to display image descriptions
         <Slide {...properties}>
           {
             descriptions.map((each, index) => <div className='inde-desc' key={ index} ><div key={ index } data={ each } >{ each }</div></div>)

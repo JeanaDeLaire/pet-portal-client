@@ -2,8 +2,9 @@ import React from 'react'
 import { deleteCare } from '../caresApi.js'
 import { Button } from 'react-bootstrap'
 
+// stateless component rendering within pets
 const Cares = props => {
-
+  // set user as props to obtain user.pet[i].cares
   const { user, setUser } = props
 
   const deleteThisCare = () => {

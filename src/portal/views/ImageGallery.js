@@ -3,6 +3,7 @@ import Slideshow from '../components/SlideShow.js'
 import { Link } from 'react-router-dom'
 import { getPictures } from '../galleryApi.js'
 
+// stateful component to get pictures and render slideshow
 class ImageGallery extends Component {
 
   constructor(props) {
@@ -14,7 +15,7 @@ class ImageGallery extends Component {
 
   getAllPictures = () => {
 
-    const { flash, history, user } = this.props
+    const { user } = this.props
 
     getPictures(user)
       .then(res => {
@@ -22,7 +23,7 @@ class ImageGallery extends Component {
         return res
       })
   }
-
+  // obtain pictures from database
   componentDidMount () {
     this.getAllPictures()
   }

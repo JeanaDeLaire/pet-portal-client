@@ -1,7 +1,9 @@
 const apiUrl = 'http://localhost:4741'
 import axios from 'axios'
 
-// contains CRUD calls for data related to photo 
+// contains CRUD calls for data related to photo
+// fetch is installed into this application
+// experimented with axios which is also installed into this application
 
 export const handleErrors = res => {
   if (res.ok) {

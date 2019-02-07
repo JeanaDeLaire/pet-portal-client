@@ -6,6 +6,7 @@ import messages from '../messages'
 import apiUrl from '../../apiConfig'
 import '../../styles/forms.scss'
 
+// stateful component to add images to database
 class AddImage extends Component {
   constructor () {
     super()

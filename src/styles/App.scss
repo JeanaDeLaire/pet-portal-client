@@ -1,24 +1,29 @@
 $success: #c7f282;
 $warning: #f1e681;
 $error: #f08181;
-$charcoal: #ccc;
+$charcoal: rgba(167, 163, 163, 0.9);
 
 .flash-success,
 .flash-warning,
 .flash-error {
-  border: 1px solid $charcoal;
+  font-size: 50px;
+  line-height: inherit;
+  border-radius: 15px;
   display: block;
+  align-self: center;
   left: 25%;
   padding: 30px;
   position: fixed;
   text-align: center;
   top: 15%;
   width: 50%;
+  min-width: 300px;
   z-index: 1;
+  color: #fafafa;
 }
 
 .flash-success {
-  background-color: $success;
+  background-color: $charcoal;
 }
 
 .flash-warning {

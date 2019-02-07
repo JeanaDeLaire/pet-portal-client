@@ -6,6 +6,7 @@ import messages from '../messages'
 import apiUrl from '../../apiConfig'
 import '../../styles/forms.scss'
 
+// stateful component to add cares to database
 class AddCare extends Component {
   constructor () {
     super()
@@ -16,11 +17,11 @@ class AddCare extends Component {
       pet: ''
     }
   }
-
+  // create handlechange event to target data
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
   })
-
+  // find pet id to update in database
   handlePetChange = event => {
     const { user } = this.props
     const petId = event.target.value
@@ -29,13 +30,13 @@ class AddCare extends Component {
       pet: petData._id
     })
   }
-
+  // api call and prevent page from reloading
   addACare = event => {
     event.preventDefault()
 
     const { type, details } = this.state
     const { flash, history, user, setUser } = this.props
-
+    // reset user upon success to
     addCare({ ...this.state}, user)
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
