@@ -6,6 +6,7 @@ import messages from '../messages'
 import apiUrl from '../../apiConfig'
 import '../../styles/forms.scss'
 
+// stateful component to add pets to database
 class AddPets extends Component {
   constructor () {
     super()
@@ -27,8 +28,11 @@ class AddPets extends Component {
 
     const { name, nickname, age } = this.state
     const { flash, history, user, setUser } = this.props
-
+    // api call to add pet to database
+    // reset user when successful to ensure accurate data throughout app
     addPet(this.state, user)
+      // after api call reset the user from the app level
+      // to pass accurate data in props
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
       .then(res => setUser(res.user))

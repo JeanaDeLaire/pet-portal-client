@@ -1,6 +1,10 @@
 const apiUrl = 'https://infinite-waters-72391.herokuapp.com'
 import axios from 'axios'
 
+// contains CRUD calls for data related to photo
+// fetch is installed into this application
+// experimented with axios which is also installed into this application
+
 export const handleErrors = res => {
   if (res.ok) {
     return res

@@ -7,12 +7,11 @@ import messages from '../messages'
 import apiUrl from '../../apiConfig'
 import '../../styles/forms.scss'
 
-
-
 class UpdatePet extends Component {
   constructor(props) {
     super(props)
 
+    // the state should be the data attributes to be updated
     this.state = {
       name: '',
       nickname: '',
@@ -21,10 +20,12 @@ class UpdatePet extends Component {
     }
   }
 
+  // create a handleChange to update pet based on event (click) target
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
   })
 
+  // set the state to the updated data attributes after change is handled
   handlePetChange = event => {
     const { user } = this.props
     const petId = event.target.value
@@ -37,12 +38,14 @@ class UpdatePet extends Component {
     })
   }
 
+  // run api call and prevent page from reloading
   updatePet = event => {
     event.preventDefault()
-
+    // define props and state locally
     const { name, nickname, age } = this.state
     const { flash, history, user, setUser } = this.props
-
+    // set state of user at app level to ensure consistent data
+    // throughout all components
     updatePet({ ...this.state }, user)
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
@@ -51,7 +54,7 @@ class UpdatePet extends Component {
       .then(() => history.push('/'))
       .catch(() => flash(messages.updatePetFailure, 'flash-error'))
   }
-
+  // render form
   render () {
     const { user } = this.props
     const { name, nickname, age, pet } = this.state

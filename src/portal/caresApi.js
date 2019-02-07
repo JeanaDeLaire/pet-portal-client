@@ -1,12 +1,7 @@
 const apiUrl = 'https://infinite-waters-72391.herokuapp.com'
 
-export const handleErrors = res => {
-  if (res.ok) {
-    return res
-  } else  {
-    throw new Error('Recieved status in 400 or 500 range.')
-  }
-}
+// contains CRUD calls for data related to cares
+// fetch is installed into this application
 
 export const addCare = ( data, user ) => {
   return fetch(apiUrl + '/cares', {

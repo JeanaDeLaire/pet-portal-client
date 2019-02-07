@@ -2,13 +2,9 @@ import axios from 'axios'
 import React, { Component } from 'react'
 const apiUrl = 'https://infinite-waters-72391.herokuapp.com'
 
-export const handleErrors = res => {
-  if (res.ok) {
-    return res
-  } else  {
-    throw new Error('Recieved status in 400 or 500 range.')
-  }
-}
+// contains CRUD calls for data related to pets
+// fetch is installed into this application
+// axios is also installed into this application
 
 export const getPets = (user) => {
   return axios.get(apiUrl + '/pets', {

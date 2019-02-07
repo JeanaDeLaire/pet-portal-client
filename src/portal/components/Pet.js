@@ -4,12 +4,15 @@ import { deletePet } from '../petsApi.js'
 import '../../styles/pets.scss'
 import { Button } from 'react-bootstrap'
 
+// stateless component to render within PetIndex
+// displays pet details from database
 const Pet = props => {
 
   const { user, setUser } = props
 
   const deleteThisPet = () => {
     deletePet(props.data._id, props.user)
+      // get all pets to refresh page after deleting a pet
       .then(props.getAllPets)
   }
 
